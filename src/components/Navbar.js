@@ -14,23 +14,29 @@ const Navbar = () => {
         <header className="navbar">
             <nav className="nav-section">
                 <div className="brand-title"><NavLink to={'/'} className='link'>My<span>Logo</span></NavLink></div>
-                <div className="toggle-button" onClick={toggleNavbar}>
+                {!hideNavbar && (
+                    <>
+                <div className={`toggle-button ${!isOpen ? 'active' : 'hide'}`} onClick={toggleNavbar}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
                 </div>
-                {!hideNavbar && (
-                    <>
+                <div className={`toggle-button close ${isOpen ? 'active' : 'hide'}`} onClick={toggleNavbar}>
+                    <span className="bar1"></span>
+                    <span className="bar2"></span>
+                </div>
                         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
                             <ul>
                                 <li><NavLink to={'/'} className='link'>Home</NavLink></li>
                                 <li><a href="#">Services</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
-                        </div><NavLink to={'/Login'} className='link'>
-                        <div className="submit-btn">
-                            <button type="submit">Subscribe</button>
-                        </div></NavLink>
+                            <NavLink to={'/Login'} className='link'>
+                                <div className="submit-btn">
+                                    <button type="submit">Subscribe</button>
+                                </div>
+                            </NavLink>
+                        </div>
                     </>
                 )}
             </nav>

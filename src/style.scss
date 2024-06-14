@@ -167,24 +167,6 @@ body{
   }
 }
 
-@media (max-width:769px) {
-  .login-wrapper .container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: normal;
-    margin: 20px;
-    height: auto;
-    width: 300px;
-  }
-  .login-wrapper .container .left-column,.login-wrapper .container .right-column {
-    height: auto;
-    border-radius: 5px 5px 0 0;
-    h1{
-      font-size: 20px;
-    }
-  }
-}
 
 
 
@@ -279,39 +261,94 @@ body{
       background-color: white;
       border-radius: 10px;
     }
+    .toggle-button.close  {
+      top: 30px;
+      .bar1{
+        height: 3px;
+        width: 100%;
+        transform: rotate(45deg);
+        background-color: white;
+        border-radius: 10px;
+      }
+      .bar2{
+position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        transform: rotate(-45deg);
+        border-radius: 10px;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .toggle-button {
+  .navbar .nav-section {
     display: flex;
-    position: absolute;
-    right: 10px;
-    top: 010px;
-  }
+    //flex-direction: column;
+    align-items: center;
+    height: auto;
 
-  .navbar-links {
-    display: none;
-    width: 100%;
-  }
+    .toggle-button {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1000;
+    }
 
-  .navbar-links ul {
-    flex-direction: column;
-    width: 100%;
-  }
+    .navbar-links {
+      display: none;
+      width: 100%;
+    }
 
-  .navbar-links li {
-    text-align: center;
-    margin: 15px 0;
-  }
+    .active {
+      display: flex;
+      //flex-direction: column;
+    }
+    .hide{
+      display: none;
+    }
+    ul {
+      flex-direction: column;
+      width: 100%;
+    }
 
-  .navbar-links.active {
-    display: flex;
+    li {
+      text-align: center;
+      margin: 15px 0;
+    }
   }
 }
 
+@media (max-width:769px) {
+  .login-wrapper .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: normal;
+    margin: 20px;
+    height: auto;
+    width: 300px;
+    border: none;
+  }
+  .login-wrapper .container .left-column{
+    height: 100px !important;
+  }
+  .login-wrapper .container .left-column,.login-wrapper .container .right-column {
+    height: auto;
+    border-radius: 5px 5px 0 0;
+    h1{
+      font-size: 30px;
+    }
+    h2{
+      font-size: 20px;
+    }
+  }
+}
 
 .home-section{
+  position: relative;
   height: 100vh;
   background: linear-gradient(180deg, #313e56 8%, #4d5871 25%, #65738d 50%, #7d8ba9 75%, #98a7c5 100%);
   display: flex;
