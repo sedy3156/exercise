@@ -7,20 +7,23 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/register";
 import ForgotPassword from "./pages/forgotPassword";
+import Chat from "./pages/Chat";
+import {useEffect, useState} from "react";
 
 function App() {
   return (
       <BrowserRouter>
-    <div className="App">
-      <Navbar/>
-      <Routes>
-          <Route path={"/"} element={<Home/>}/>
-        <Route path={"/Login"} element={<Login/>}/>
-        <Route path={"/forgot_password"} element={<ForgotPassword/>}/>
-        <Route path={"/Register"} element={<Register/>}/>
-          <Route path={"/auth"} element={<Acceuil/>}/>
-        </Routes>
-    </div>
+        <div className="App">
+          <Navbar/>
+          <Routes>
+            <Route path={"/"} element={<Home/>}/>
+            <Route path={"/chat"} element={<Chat/>}/>
+            <Route path={"/Login"} element={<Login/>}/>
+            <Route path={"/forgot_password"} element={<ForgotPassword/>}/>
+            <Route path={"/Register"} element={<Register/>}/>
+            <Route path={"*"} element={<Acceuil/>}/>
+          </Routes>
+        </div>
       </BrowserRouter>
   );
 }

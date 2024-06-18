@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poetsen+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
   --dark-blue: #313e56;
   --thin-blue: #7da8e6;
@@ -11,7 +12,7 @@
 body {
   background-color: var(--light-blue);
   margin: 0;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
   padding: 0;
 }
 body .section {
@@ -72,7 +73,7 @@ body .section {
   justify-content: center;
   background-color: var(--dark-blue);
   border-radius: 5px 0 0 5px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
 }
 .login-wrapper .container .left-column h1 {
   color: var(--light-blue);
@@ -117,7 +118,7 @@ body .section {
   position: absolute;
   top: -14px;
   left: 10px;
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
   font-weight: bold;
   text-transform: capitalize;
   background-color: var(--light-blue);
@@ -133,7 +134,7 @@ body .section {
   top: 10px;
 }
 .input-group input, .input-group textarea {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
   font-size: 17px;
   background-color: var(--light-blue);
   padding: 12px;
@@ -159,7 +160,7 @@ body .section {
   text-transform: uppercase;
   transition: 0.2s ease-in;
   box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
 }
 .link {
   text-decoration: none;
@@ -167,7 +168,7 @@ body .section {
 }
 
 .navbar {
-  font-family: "Shadows Into Light", cursive;
+  font-family: "Abel", sans-serif;
   background-color: var(--dark-blue);
   position: fixed;
   width: 100%;
@@ -175,14 +176,15 @@ body .section {
 }
 .navbar .nav-section {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px;
   height: 55px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .navbar .nav-section .brand-title {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: white;
   margin-left: 10px;
@@ -323,23 +325,217 @@ body .section {
 }
 .home-section .home-title {
   position: absolute;
-  font-family: "Shadows Into Light", cursive;
-  opacity: 0.1;
+  font-family: "Bebas Neue", sans-serif;
+  opacity: 0.3;
   color: white;
-  font-size: 500px;
+  font-size: 50vw;
+  background: url("../public/background_car.jpg") no-repeat;
+  background-size: cover;
   text-transform: uppercase;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px var(--light-blue);
 }
 .home-section .home-intro {
   z-index: 10;
-  font-family: "Shadows Into Light", cursive;
-  font-weight: 100;
+  font-family: "Abel", sans-serif;
+  font-weight: 800;
   font-size: 1.5rem;
   line-height: 40px;
   text-align: center;
   color: var(--light-blue);
-  max-width: 1200px;
+  max-width: 1280px;
+}
+
+.chat-container {
+  position: relative;
+  font-family: "Abel", sans-serif;
+  top: 75px;
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+  height: calc(100vh - 75px);
+}
+.chat-container .column {
+  max-width: 1280px;
+  display: flex;
+  width: 100%;
+}
+.chat-container .column .title {
+  position: sticky;
+  top: 10px;
+  background: var(--light-blue);
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);
+  z-index: 12;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px 10px 10px 0;
+  width: 90%;
+}
+.chat-container .column .menu {
+  position: sticky;
+  top: 10px;
+  background: var(--light-blue);
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.2);
+  z-index: 12;
+  padding: 5px 10px;
+  margin: 10px 0 10px 0;
+  width: 90%;
+  text-align: right;
+  cursor: pointer;
+}
+.chat-container .column .menu .icon {
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 30px;
+}
+.chat-container .column .menu .icon:hover {
+  color: var(--thin-blue);
+  font-weight: bold;
+}
+.chat-container .column .user-list {
+  width: 30%;
+  overflow-y: auto;
+  background-color: var(--light-blue);
+  cursor: pointer;
+}
+.chat-container .column .chat-content {
+  width: 70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-blue);
+  border: 1px solid var(--dark-blue);
+}
+.chat-container .column .chat-content .discussions {
+  overflow-y: auto;
+  width: 100%;
+  border-bottom: none;
+  border-top: none;
+  padding: 0 40px;
+  margin-bottom: 70px;
+  box-sizing: border-box;
+  height: calc(100vh - 100px);
+}
+.chat-container .column .chat-content .input-send {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  width: 30%;
+}
+.chat-container .column .chat-option {
+  flex: 1 0 auto;
+  background-color: var(--light-blue);
+}
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px;
+  padding: 5px 0;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0 10px 10px 0;
+  width: auto;
+  gap: 20px;
+}
+.list-container .userprofil {
+  background-color: var(--dark-blue);
+  position: relative;
+  border-radius: 0 50px 50px 0;
+  padding: 5px;
+  width: 50px;
+}
+.list-container .userprofil .user-profil {
+  display: flex;
+  justify-content: right;
+  border-radius: 50px;
+}
+.list-container .userprofil .user-profil img {
+  border: 2px solid var(--light-blue);
+  object-fit: cover;
+  border-radius: 50px;
+  height: 30px;
+  width: 30px;
+}
+.list-container .active img {
+  border: 2px solid #5ed920 !important;
+}
+.list-container .list-content {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.list-container .list-content h1 {
+  font-size: 15px;
+  margin: 0;
+}
+.list-container .list-content span {
+  font-size: 10px;
+}
+
+.list-container:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 5px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.chat-input-group {
+  bottom: 0;
+  background-color: white;
+  z-index: 1;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.chat-input-group .form-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  width: 100%;
+}
+.chat-input-group .form-group input[type=text] {
+  flex: 1;
+  padding: 10px 80px 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+  font-family: "Abel", sans-serif;
+  width: 100%;
+}
+.chat-input-group .form-group .send-btn {
+  font-family: "Abel", sans-serif;
+  position: absolute;
+  right: 1%;
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--dark-blue);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.chat-input-group .form-group .send-btn:hover {
+  color: var(--thin-blue);
+}
+
+.progress-bar {
+  z-index: 100;
+  height: 5px;
+  background-color: var(--thin-blue);
+  overflow: hidden;
+  position: fixed;
+  transition: width;
+  border-radius: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
