@@ -351,37 +351,11 @@ body {
   }
 }
 
-@media (max-width: 769px) {
-  .login-wrapper .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: normal;
-    margin: 20px;
-    height: auto;
-    width: 300px;
-    border: none;
-  }
-  .login-wrapper .container .left-column {
-    height: 100px !important;
-  }
-  .login-wrapper .container .left-column, .login-wrapper .container .right-column {
-    height: auto;
-    border-radius: 5px 5px 0 0;
-
-    h1 {
-      font-size: 30px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-  }
-}
 
 .home-section {
   position: relative;
-  height: 100vh;
+  top: 55px;
+  height: calc(100vh - 55px);
   background: linear-gradient(180deg, #313e56 8%, #4d5871 25%, #65738d 50%, #7d8ba9 75%, #98a7c5 100%);
   display: flex;
   justify-content: center;
@@ -441,6 +415,7 @@ body {
       width: 90%;
 
     }
+
     .menu {
       position: sticky;
       top: 10px;
@@ -452,12 +427,14 @@ body {
       width: 90%;
       text-align: right;
       cursor: pointer;
-      .icon{
+
+      .icon {
         color: var(--dark-blue);
         font-weight: bold;
         font-size: 30px;
       }
-      .icon:hover{
+
+      .icon:hover {
         color: var(--thin-blue);
         font-weight: bold;
       }
@@ -484,7 +461,7 @@ body {
         width: 100%;
         border-bottom: none;
         border-top: none;
-        padding:0 40px;
+        padding: 0 40px;
         margin-bottom: 70px;
         box-sizing: border-box;
         height: calc(100vh - 100px);
@@ -631,3 +608,38 @@ body {
   border-radius: 50px;
 }
 
+
+
+
+@media (max-width: 769px) {
+  .login-wrapper .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: normal;
+    margin: 20px;
+    height: auto;
+    width: 300px;
+    border: none !important;
+  }
+  .login-wrapper .container .left-column {
+    height: 100px !important;
+  }
+  .login-wrapper .container .left-column, .login-wrapper .container .right-column {
+    height: auto;
+    border-radius: 5px 5px 0 0;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .home-section {
+    position: relative;
+    height: 100vh;
+    top: 0;
+  }
+}
